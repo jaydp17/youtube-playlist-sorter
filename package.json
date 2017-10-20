@@ -1,7 +1,7 @@
 {
   "name": "youtube-playlist-sorter",
   "description": "Sorts ↕️ a public playlist based on it's popularity 🔥",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Jaydeep Solanki <jaydp17@gmail.com> (https://jaydp.com)",
   "bin": {
     "youtube-playlist-sorter": "src/index.js"

@@ -3,6 +3,9 @@
   "description": "Sorts ↕️ a public playlist based on it's popularity 🔥",
   "version": "0.1.0",
   "author": "Jaydeep Solanki <jaydp17@gmail.com> (https://jaydp.com)",
+  "bin": {
+    "youtube-playlist-sorter": "src/index.js"
+  },
   "bugs": {
     "url": "https://github.com/jaydp17/youtube-playlist-sorter/issues"
   },

@@ -41,9 +41,7 @@ async function main() {
 function prettyPrintVideo(video, index) {
   const views = abbreviate(video.statistics.viewCount, 1);
   const likes = abbreviate(video.statistics.likeCount, 1);
-  console.log(
-    `${index + 1}. ${video.snippet.title} [👀  ${views} / 👍  ${likes}]`
-  );
+  console.log(`${index + 1}. ${video.snippet.title} [👀  ${views} / 👍  ${likes}]`);
   console.log(`\thttps://www.youtube.com/watch?v=${video.id}`);
   console.log();
 }

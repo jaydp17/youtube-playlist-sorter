@@ -24,10 +24,7 @@ async function getVideoIdsFromPlayList(playlistId, pageToken) {
   });
   const videoIds = data.items.map(item => item.contentDetails.videoId);
   if (data.nextPageToken) {
-    const nextPageVideoIds = await getVideoIdsFromPlayList(
-      playlistId,
-      data.nextPageToken
-    );
+    const nextPageVideoIds = await getVideoIdsFromPlayList(playlistId, data.nextPageToken);
     return [...videoIds, ...nextPageVideoIds];
   }
   return videoIds;

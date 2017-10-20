@@ -1,5 +1,6 @@
 'use strict';
 
+const url = require('url');
 const api = require('./api');
 
 /**
@@ -15,4 +16,10 @@ async function getSortedPlaylist(playListId) {
   return videos.sort(comparator);
 }
 
-module.exports = { getSortedPlaylist };
+function getPlaylistId(playlistUrl) {
+  const parsedUrl = url.parse(playlistUrl, true);
+  if (!parsedUrl.host.includes('youtube.com')) return undefined;
+  return parsedUrl.query.list;
+}
+
+module.exports = { getSortedPlaylist, getPlaylistId };

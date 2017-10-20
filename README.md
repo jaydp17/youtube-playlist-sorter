@@ -1,7 +1,12 @@
 # youtube-playlist-sorter
 Sorts ↕️ a public playlist based on it's popularity 🔥
 
-## Usage
+## :floppy_disk: Installation
+```sh
+$ npm i -g youtube-playlist-sorter
+```
+
+## :arrow_forward: Usage
 Create an `API_KEY` ([how to create the key](https://developers.google.com/youtube/v3/getting-started)) and put it in your `~/.bashrc`.
 
 ```sh
@@ -10,5 +15,5 @@ echo 'export YOUTUBE_PLAYLIST_SORTER_API_KEY=AIzaxxxxxxxyyyyyyyyzzz' >> ~/.bashr
 
 ![Usage](screenshots/usage.png)
 
-## License
+## :mortar_board: License
 MIT

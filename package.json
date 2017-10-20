@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jaydp17/youtube-playlist-sorter#readme",
   "dependencies": {
-    "axios": "^0.16.2"
+    "axios": "^0.16.2",
+    "number-abbreviate": "^2.0.0"
   }
 }

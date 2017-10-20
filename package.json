@@ -1,23 +1,26 @@
 {
   "name": "youtube-playlist-sorter",
-  "version": "1.0.0",
   "description": "Sorts ↕️ a public playlist based on it's popularity 🔥",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "0.1.0",
+  "author": "Jaydeep Solanki <jaydp17@gmail.com> (https://jaydp.com)",
+  "bugs": {
+    "url": "https://github.com/jaydp17/youtube-playlist-sorter/issues"
   },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "number-abbreviate": "^2.0.0"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "homepage": "https://github.com/jaydp17/youtube-playlist-sorter#readme",
+  "license": "MIT",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jaydp17/youtube-playlist-sorter.git"
   },
-  "author": "Jaydeep Solanki <jaydp17@gmail.com> (https://jaydp.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jaydp17/youtube-playlist-sorter/issues"
-  },
-  "homepage": "https://github.com/jaydp17/youtube-playlist-sorter#readme",
-  "dependencies": {
-    "axios": "^0.16.2",
-    "number-abbreviate": "^2.0.0"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

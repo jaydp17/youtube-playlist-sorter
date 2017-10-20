@@ -16,6 +16,9 @@
   "engines": {
     "node": ">= 6.0.0"
   },
+  "files": [
+    "src"
+  ],
   "homepage": "https://github.com/jaydp17/youtube-playlist-sorter#readme",
   "license": "MIT",
   "main": "src/index.js",

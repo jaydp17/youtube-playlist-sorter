@@ -2,9 +2,9 @@
 
 'use strict';
 
-const { API_KEY } = process.env;
-if (!API_KEY) {
-  console.error('API_KEY not found in env vars');
+const { YOUTUBE_PLAYLIST_SORTER_API_KEY } = process.env;
+if (!YOUTUBE_PLAYLIST_SORTER_API_KEY) {
+  console.error('YOUTUBE_PLAYLIST_SORTER_API_KEY not found in env vars');
   process.exit(1);
 }
 

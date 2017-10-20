@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const BASE_URL = 'https://www.googleapis.com/youtube/v3';
 
-const { API_KEY } = process.env;
+const { YOUTUBE_PLAYLIST_SORTER_API_KEY } = process.env;
 
 /**
  * Returns a list of Video ids in a playlist
@@ -19,7 +19,7 @@ async function getVideoIdsFromPlayList(playlistId, pageToken) {
       part: 'contentDetails',
       playlistId,
       pageToken,
-      key: API_KEY,
+      key: YOUTUBE_PLAYLIST_SORTER_API_KEY,
     },
   });
   const videoIds = data.items.map(item => item.contentDetails.videoId);
@@ -35,7 +35,7 @@ async function getVideoDetails(videoId) {
     params: {
       id: videoId,
       part: 'snippet,statistics',
-      key: API_KEY,
+      key: YOUTUBE_PLAYLIST_SORTER_API_KEY,
     },
   });
   return data.items[0];

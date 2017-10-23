@@ -14,6 +14,7 @@ Create an `API_KEY` ([how to create the key](https://developers.google.com/youtu
 
 ```sh
 echo 'export YOUTUBE_PLAYLIST_SORTER_API_KEY=AIzaxxxxxxxyyyyyyyyzzz' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 ![Usage](screenshots/usage.png)

@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-'use strict';
+import 'babel-polyfill';
 
 const { YOUTUBE_PLAYLIST_SORTER_API_KEY } = process.env;
 if (!YOUTUBE_PLAYLIST_SORTER_API_KEY) {
@@ -19,7 +19,7 @@ if (!playlistUrl) {
 const abbreviate = require('number-abbreviate');
 const playList = require('./playlist');
 
-async function main() {
+const main = async () => {
   const playListId = playList.getPlaylistId(playlistUrl);
   if (!playListId) {
     console.error('Looks like an invalid playlist url 😵');
@@ -36,7 +36,7 @@ async function main() {
     }
     process.exit(1);
   }
-}
+};
 
 function prettyPrintVideo(video, index) {
   const views = abbreviate(video.statistics.viewCount, 1);

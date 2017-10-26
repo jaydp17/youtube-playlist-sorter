@@ -14,6 +14,13 @@
     "babel-polyfill": "^6.26.0",
     "number-abbreviate": "^2.0.0"
   },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "prettier": "1.7.4",
+    "release-it": "3.1.2",
+    "rimraf": "^2.6.2"
+  },
   "engines": {
     "node": ">= 4.0.0"
   },
@@ -28,18 +35,11 @@
     "url": "git+https://github.com/jaydp17/youtube-playlist-sorter.git"
   },
   "scripts": {
-    "dev": "babel-node src/index.js",
-    "release-it": "release-it",
-    "prebuild": "rimraf lib",
     "build": "babel src -d lib",
+    "dev": "babel-node src/index.js",
+    "prebuild": "rimraf lib",
     "prepublishOnly": "npm build",
+    "release-it": "release-it",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "prettier": "1.7.4",
-    "release-it": "3.1.2",
-    "rimraf": "^2.6.2"
   }
 }

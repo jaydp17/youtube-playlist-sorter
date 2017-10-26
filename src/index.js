@@ -39,8 +39,10 @@ const main = async () => {
 };
 
 function prettyPrintVideo(video, index) {
-  const views = abbreviate(video.statistics.viewCount, 1);
-  const likes = abbreviate(video.statistics.likeCount, 1);
+  let views = abbreviate(video.statistics.viewCount, 1);
+  let likes = abbreviate(video.statistics.likeCount, 1);
+  if (Number.isNaN(views)) views = 'Disabled';
+  if (Number.isNaN(likes)) likes = 'Disabled';
   console.log(`${index + 1}. ${video.snippet.title} [👀  ${views} / 👍  ${likes}]`);
   console.log(`\thttps://www.youtube.com/watch?v=${video.id}`);
   console.log();

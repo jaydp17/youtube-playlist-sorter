@@ -28,6 +28,7 @@
     "url": "git+https://github.com/jaydp17/youtube-playlist-sorter.git"
   },
   "scripts": {
+    "dev": "babel-node src/index.js",
     "release-it": "release-it",
     "prebuild": "rimraf lib",
     "build": "babel src -d lib",

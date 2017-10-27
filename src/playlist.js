@@ -18,7 +18,7 @@ async function getSortedPlaylist(playListId) {
 
 function getPlaylistId(playlistUrl) {
   const parsedUrl = url.parse(playlistUrl, true);
-  if (!parsedUrl.host.includes('youtube.com')) return undefined;
+  if (!parsedUrl.host || !parsedUrl.host.includes('youtube.com')) return undefined;
   return parsedUrl.query.list;
 }
 

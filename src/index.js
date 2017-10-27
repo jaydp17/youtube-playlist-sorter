@@ -1,6 +1,10 @@
 #! /usr/bin/env node
 
 import 'babel-polyfill';
+import yargs from 'yargs';
+import abbreviate from 'number-abbreviate';
+
+import playList from './playlist';
 
 const { YOUTUBE_PLAYLIST_SORTER_API_KEY } = process.env;
 if (!YOUTUBE_PLAYLIST_SORTER_API_KEY) {
@@ -8,23 +12,22 @@ if (!YOUTUBE_PLAYLIST_SORTER_API_KEY) {
   process.exit(1);
 }
 
-const rawPlaylistUrl = process.argv[2];
-const playlistUrl = rawPlaylistUrl && rawPlaylistUrl.trim();
-if (!playlistUrl) {
-  console.log('Usage: index.js [playlistUrl]\n');
-  console.log('Missing argument: playlistUrl');
-  process.exit(1);
-}
-
-const abbreviate = require('number-abbreviate');
-const playList = require('./playlist');
+const argv = yargs
+  .usage('$0 <Playlist URL>')
+  .demandCommand(1, 1, 'Youtube Playlist URL not provided!', 'Only 1 Youtube Playlist URL needed!')
+  .help('h')
+  .alias('h', 'help')
+  .alias('v', 'version')
+  .check(_argv => {
+    const playListId = playList.getPlaylistId(_argv._[0]);
+    if (!playListId) {
+      throw new Error('Error: Looks like an invalid Playlist URL 😵');
+    }
+    return true;
+  }).argv;
 
 const main = async () => {
-  const playListId = playList.getPlaylistId(playlistUrl);
-  if (!playListId) {
-    console.error('Looks like an invalid playlist url 😵');
-    process.exit(1);
-  }
+  const playListId = playList.getPlaylistId(argv._[0]);
   try {
     const videosList = await playList.getSortedPlaylist(playListId);
     videosList.forEach(prettyPrintVideo);

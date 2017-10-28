@@ -30,6 +30,19 @@
     "lib"
   ],
   "homepage": "https://github.com/jaydp17/youtube-playlist-sorter#readme",
+  "keywords": [
+    "playlist",
+    "popularity",
+    "videos",
+    "views",
+    "youtube",
+    "youtube likes",
+    "youtube playlist",
+    "youtube playlist popularity",
+    "youtube playlist sorter",
+    "youtube videos",
+    "yps"
+  ],
   "license": "MIT",
   "main": "lib/index.js",
   "repository": {

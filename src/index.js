@@ -3,11 +3,11 @@
 import 'babel-polyfill';
 import yargs from 'yargs';
 import abbreviate from 'number-abbreviate';
-import updateNotifier from 'update-notifier'
+import updateNotifier from 'update-notifier';
 
 import playList from './playlist';
 
-const pkg = require('../package.json')
+const pkg = require('../package.json');
 
 const { YOUTUBE_PLAYLIST_SORTER_API_KEY } = process.env;
 if (!YOUTUBE_PLAYLIST_SORTER_API_KEY) {
@@ -16,7 +16,7 @@ if (!YOUTUBE_PLAYLIST_SORTER_API_KEY) {
 }
 
 // Check for updates and notify if available
-updateNotifier({pkg}).notify()
+updateNotifier({ pkg }).notify();
 
 const argv = yargs
   .usage('$0 <Playlist URL>')

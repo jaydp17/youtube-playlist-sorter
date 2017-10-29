@@ -24,6 +24,10 @@ const argv = yargs
   .help('h')
   .alias('h', 'help')
   .alias('v', 'version')
+  .option('likes', {
+    alias: 'l',
+    default: false
+  })
   .check(_argv => {
     const playListId = playList.getPlaylistId(_argv._[0]);
     if (!playListId) {
@@ -35,7 +39,14 @@ const argv = yargs
 const main = async () => {
   const playListId = playList.getPlaylistId(argv._[0]);
   try {
-    const videosList = await playList.getSortedPlaylist(playListId);
+    let videosList;
+
+    if (argv.likes) {
+      videosList = await playList.getSortedPlaylist(playListId, playList.likeComparator);
+    } else {
+      videosList = await playList.getSortedPlaylist(playListId);
+    }
+
     videosList.forEach(prettyPrintVideo);
   } catch (error) {
     if (error.response) {

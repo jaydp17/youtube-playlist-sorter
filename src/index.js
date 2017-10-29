@@ -24,6 +24,10 @@ const argv = yargs
   .help('h')
   .alias('h', 'help')
   .alias('v', 'version')
+  .option('likes', {
+    alias: 'l',
+    default: false
+  })
   .check(_argv => {
     const playListId = playList.getPlaylistId(_argv._[0]);
     if (!playListId) {
@@ -36,6 +40,25 @@ const main = async () => {
   const playListId = playList.getPlaylistId(argv._[0]);
   try {
     const videosList = await playList.getSortedPlaylist(playListId);
+
+    if (argv.likes) {
+      videosList.sort((a, b) => {
+          let aLikes = a.statistics.likeCount;
+          let bLikes = b.statistics.likeCount;
+
+          // In case likes are disabled for either video
+          if (isNaN(aLikes)) {
+              aLikes = 0;
+          }
+
+          if (isNaN(bLikes)) {
+              bLikes = 0;
+          }
+
+          return bLikes - aLikes;
+      });
+    }
+
     videosList.forEach(prettyPrintVideo);
   } catch (error) {
     if (error.response) {

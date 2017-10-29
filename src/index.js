@@ -39,24 +39,12 @@ const argv = yargs
 const main = async () => {
   const playListId = playList.getPlaylistId(argv._[0]);
   try {
-    const videosList = await playList.getSortedPlaylist(playListId);
+    let videosList;
 
     if (argv.likes) {
-      videosList.sort((a, b) => {
-          let aLikes = a.statistics.likeCount;
-          let bLikes = b.statistics.likeCount;
-
-          // In case likes are disabled for either video
-          if (isNaN(aLikes)) {
-              aLikes = 0;
-          }
-
-          if (isNaN(bLikes)) {
-              bLikes = 0;
-          }
-
-          return bLikes - aLikes;
-      });
+      videosList = await playList.getSortedPlaylist(playListId, playList.likeComparator);
+    } else {
+      videosList = await playList.getSortedPlaylist(playListId);
     }
 
     videosList.forEach(prettyPrintVideo);

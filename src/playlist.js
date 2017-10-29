@@ -39,9 +39,13 @@ function likeComparator(a, b) {
  * @returns {Promise.<Array.<T>|*>}
  */
 async function getSortedPlaylist(playListId, comparator = viewComparator) {
-  const videoIds = await api.getVideoIdsFromPlayList(playListId);
-  const videos = await Promise.all(videoIds.map(api.getVideoDetails));
-  return videos.sort(comparator);
+  try {
+    const videoIds = await api.getVideoIdsFromPlayList(playListId);
+    const videos = await Promise.all(videoIds.map(api.getVideoDetails));
+    return videos.sort(comparator);
+  } catch (e) {
+    throw e;
+  }
 }
 
 function getPlaylistId(playlistUrl) {

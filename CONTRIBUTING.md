@@ -1,10 +1,8 @@
 # youtube-playlist-sorter
----------------
 Thank you for taking your time to contribute!
 These are a set of guidelines to follow when contributing to youtube-playlist-sorter. 
 
 # How Can I Contribute?
-----------
 ### Reporting Bugs
 Create a new [issue](https://guides.github.com/features/issues/) in the repository and explain the problem, and include these details:
 * Use a clear and descriptive title for the issue
@@ -21,7 +19,6 @@ Create a new [issue](https://guides.github.com/features/issues/) in the reposito
 You can start by looking through the current [open issues](https://github.com/jaydp17/youtube-playlist-sorter/issues). Refer to the [README](https://github.com/jaydp17/youtube-playlist-sorter/blob/master/README.md) for usage.
 If you are first-timer or are unsure how to create pull requests in github, you can follow this [guide](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) for instructions.
 # Styling Guide
----------
 ### Git Commit Messages
 * Use the present tense ("Add feature" not "Added feature")
 * Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
@@ -31,5 +28,4 @@ If you are first-timer or are unsure how to create pull requests in github, you 
 
 
 # License
----------
 [MIT](https://github.com/jaydp17/youtube-playlist-sorter/blob/master/LICENSE)

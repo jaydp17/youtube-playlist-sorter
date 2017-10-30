@@ -15,6 +15,7 @@
     "babel-polyfill": "^6.26.0",
     "number-abbreviate": "^2.0.0",
     "update-notifier": "^2.3.0",
+    "please-upgrade-node": "^3.0.1",
     "yargs": "^10.0.3"
   },
   "devDependencies": {

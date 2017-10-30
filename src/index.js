@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const pkg = require('../package.json')
-require('please-upgrade-node')(pkg);
+require('./upgrade-node-check')(pkg);
 
 import 'babel-polyfill';
 import yargs from 'yargs';

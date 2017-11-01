@@ -10,8 +10,6 @@ import updateNotifier from 'update-notifier';
 
 import playList from './playlist';
 
-const pkg = require('../package.json');
-
 const { YOUTUBE_PLAYLIST_SORTER_API_KEY } = process.env;
 if (!YOUTUBE_PLAYLIST_SORTER_API_KEY) {
   console.error('YOUTUBE_PLAYLIST_SORTER_API_KEY not found in env vars');

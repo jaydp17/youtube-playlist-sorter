@@ -19,5 +19,20 @@ source ~/.bashrc
 
 ![Usage](screenshots/usage.png)
 
+
+## :wrench: Project Setup (Development)
+
+1. Clone the repo
+
+2. Run ``` npm install ``` inside the directory
+
+3. Get/create the API_KEY (as explained previously)
+
+4. Run the program
+
+```
+$ npm run dev <PLAYLIST_URL>
+```
+
 ## :mortar_board: License
 MIT

@@ -16,7 +16,7 @@ Create a new [issue](https://guides.github.com/features/issues/) in the reposito
 * Explain why you think the enhancement would be useful
 
 ### Pull Requests
-You can start by looking through the current [open issues](https://github.com/jaydp17/youtube-playlist-sorter/issues). Refer to the [README](https://github.com/jaydp17/youtube-playlist-sorter/blob/master/README.md) for usage.
+You can start by looking through the current [open issues](https://github.com/jaydp17/youtube-playlist-sorter/issues). Refer to the [README](https://github.com/jaydp17/youtube-playlist-sorter/blob/master/README.md) for usage and project setup.
 If you are first-timer or are unsure how to create pull requests in github, you can follow this [guide](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) for instructions.
 # Styling Guide
 ### Git Commit Messages

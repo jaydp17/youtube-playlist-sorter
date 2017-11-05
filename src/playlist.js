@@ -13,7 +13,7 @@ function comparator(a, b) {
 async function getSortedPlaylist(playListId) {
   const videoIds = await api.getVideoIdsFromPlayList(playListId);
   const videos = await Promise.all(videoIds.map(api.getVideoDetails));
-  return videos.sort(comparator);
+  return videos.filter(v => !!v).sort(comparator);
 }
 
 function getPlaylistId(playlistUrl) {

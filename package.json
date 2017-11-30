@@ -52,7 +52,7 @@
   },
   "scripts": {
     "build": "babel src -d lib",
-    "dev": "babel-node src/index.js",
+    "dev": "babel-node -- src/index.js",
     "prebuild": "rimraf lib",
     "prepublishOnly": "npm build",
     "release-it": "release-it",

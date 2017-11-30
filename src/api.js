@@ -34,7 +34,7 @@ async function getVideoDetails(videoId) {
   const { data } = await axios.get(`${BASE_URL}/videos`, {
     params: {
       id: videoId,
-      part: 'snippet,statistics',
+      part: 'snippet,statistics,contentDetails',
       key: YOUTUBE_PLAYLIST_SORTER_API_KEY,
     },
   });

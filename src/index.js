@@ -52,9 +52,29 @@ function prettyPrintVideo(video, index) {
   let likes = abbreviate(video.statistics.likeCount, 1);
   if (Number.isNaN(views)) views = 'Disabled';
   if (Number.isNaN(likes)) likes = 'Disabled';
-  console.log(`${index + 1}. ${video.snippet.title} [👀  ${views} / 👍  ${likes}]`);
+  const duration = formatIsoDuration(video.contentDetails.duration);
+  console.log(`${index + 1}. ${video.snippet.title} [👀  ${views} / 👍  ${likes}] (⏳  ${duration})`);
   console.log(`\thttps://www.youtube.com/watch?v=${video.id}`);
   console.log();
+}
+
+function formatIsoDuration(duration) {
+  const durationSplits = duration
+    .replace(/[a-zA-Z]/g, ' ')
+    .split(' ')
+    .filter(str => !!str);
+  return durationSplits.reverse().reduce((acc, item, index) => {
+    if (index === 0) {
+      return (`${item}s ` + acc).trim();
+    }
+    if (index === 1) {
+      return (`${item}m ` + acc).trim();
+    }
+    if (index === 2) {
+      return (`${item}h ` + acc).trim();
+    }
+    return acc;
+  }, '');
 }
 
 main();

@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/youtube-playlist-sorter.svg)](https://www.npmjs.com/package/youtube-playlist-sorter)
 [![npm](https://img.shields.io/npm/l/youtube-playlist-sorter.svg)](https://www.npmjs.com/package/youtube-playlist-sorter)
 
-Sorts ↕️ a public playlist based on it's popularity 🔥
+Sorts ↕️ a public playlist based on its popularity 🔥
 
 ## :floppy_disk: Installation
 ```sh

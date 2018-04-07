@@ -1,13 +1,14 @@
 #! /usr/bin/env node
 
+const pkg = require('../package.json')
+require('./upgrade-node-check')(pkg);
+
 import 'babel-polyfill';
 import yargs from 'yargs';
 import abbreviate from 'number-abbreviate';
 import updateNotifier from 'update-notifier';
 
 import playList from './playlist';
-
-const pkg = require('../package.json');
 
 const { YOUTUBE_PLAYLIST_SORTER_API_KEY } = process.env;
 if (!YOUTUBE_PLAYLIST_SORTER_API_KEY) {
